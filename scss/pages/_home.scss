@@ -649,7 +649,7 @@
 
   // About
   &__about {
-    @include dFlex(center, $gap: 10rem);
+    @include dFlex(center, $gap: 16rem);
 
     padding-top: 6.8rem;
 
@@ -683,6 +683,11 @@
 
     img {
       width: 100%;
+      transform: rotate(15deg);
+      box-shadow: 12px 12px rgba($yellowColor, 0.4),
+        -12px -12px rgba($yellowColor, 0.4), 24px 24px rgba($yellowColor, 0.2),
+        -24px -24px rgba($yellowColor, 0.2);
+      border-radius: 15px;
     }
   }
 
@@ -704,8 +709,12 @@
       width: 42rem;
     }
 
+    .slick-list {
+      padding: 3.2rem 0;
+    }
+
     .slick-track {
-      @include dFlex(center, $gap: 0.8rem);
+      @include dFlex(center, $gap: 1.6rem);
     }
 
     .slick-dots {
@@ -751,7 +760,9 @@
     width: 51.2rem;
     padding: 3rem 2rem;
     border-radius: 1rem;
-    background-color: $grayBgColor;
+    // background-color: $grayBgColor;
+    box-shadow: 0.2rem 0.5rem 0.6rem rgba(0, 0, 0, 0.15);
+    cursor: grab;
 
     @include responsive($small) {
       width: 42rem;
@@ -881,7 +892,7 @@
   // Sign up
   &__register {
     margin: 1.6rem;
-    margin-top: 8rem;
+    margin-top: 12rem;
     padding: 9.2rem 32.8rem;
     border-radius: 1rem;
     background: center / cover no-repeat url('/images/banner-register.png');

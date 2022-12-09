@@ -63,10 +63,16 @@
     </div>
   </div>
 
+  <% if (title == "Foodyar") { %>
+  <a href="/" id="btn-profile" class="header__action-profile">
+    <img src="/images/profile.png" alt="Profile" />
+  </a>
+  <%} if (title == "Foodyar || Logout") { %>
   <a href="/login" id="btn-login" class="header__action-sign-in">
     <img src="/images/sign-in.svg" alt="Sign in icon" />
     Sign in
   </a>
+  <% } %>
 </div>
 
 <!-- Menu Mobile -->
