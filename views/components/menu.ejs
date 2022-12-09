@@ -1,0 +1,41 @@
+<p class="home__menu--title">Our menu</p>
+<h4 class="home__menu--heading">Our Popular Menu</h4>
+<p class="home__menu--desc">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam
+</p>
+
+<div id="card-list" class="home__card-list">
+  <% foods.forEach( function( obj ) { %>
+  <div class="home__card move-in-top delay-1" food-id="5" id="card-food">
+    <div class="home__card-picture">
+      <img src="<%= obj.thumbnail %>" alt="<%= obj.name %>" />
+      <button class="home__card--btn-add-cart">More</button>
+    </div>
+
+    <div class="home__card-content">
+      <h5 class="home__card--name"><%= obj.name %></h5>
+      <p class="home__card--desc"><%= obj.description %></p>
+      <div class="home__card-bottom">
+        <p id="card-price"><%= obj.price %> VND</p>
+        <span id="card-like" class="home__card-like"
+          ><svg
+            width="23"
+            height="20"
+            viewBox="0 0 23 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11.9644 3.12862C8.29122 -2.54509 0.856934 0.545766 0.856934 6.72634C0.856934 11.3675 11.0489 18.6275 11.9644 19.5715C12.8861 18.6275 22.5712 11.3675 22.5712 6.72634C22.5712 0.592623 15.6444 -2.54509 11.9644 3.12862Z"
+              fill="#1D1D1D"
+              fill-opacity="0.7"
+            ></path>
+          </svg>
+        </span>
+      </div>
+    </div>
+  </div>
+  <% }); %>
+</div>
+
+<button id="btn-menu" class="home__menu--btn">More Menu</button>

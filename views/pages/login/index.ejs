@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta
+      property="og:image"
+      content="https://luan-thanhh.github.io/lets-food/assets/img/thumbnail.jpg"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      rel="icon"
+      href="/images/favicon.svg"
+      type="image/gif"
+      sizes="16x16"
+    />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <!-- ======== HEADER ======== -->
+    <header id="header" class="header">
+      <%- include('../../layouts/header.ejs') %>
+    </header>
+
+    <!-- ======== Login ======== -->
+    <div id="modal" class="modal show">
+      <div class="modal__login">
+        <div class="modal__register">
+          <div>
+            <h2>Have A Account?</h2>
+            <button class="modal__btn-login">Login</button>
+          </div>
+          <div>
+            <h2>Create A Account?</h2>
+
+            <a href="/register" class="modal__btn-register">Register</a>
+          </div>
+        </div>
+
+        <div class="modal__back-info">
+          <div class="modal__img-back-grey">
+            <!-- <img src="/images/bg-modal.jfif" alt="" /> -->
+          </div>
+        </div>
+        <div class="modal__forms modal__forms-active-login">
+          <div class="modal__img-back">
+            <!-- <img src="/images/bg-modal.jpg" alt="" /> -->
+          </div>
+          <form
+            action="/login"
+            id="form-login"
+            class="modal__form-login"
+            style="display: flex; opacity: 1; visibility: visible"
+          >
+            <h2>LOGIN</h2>
+            <div class="modal__form-control">
+              <input type="email" placeholder="Email" id="email-login" />
+              <small>Error message</small>
+            </div>
+            <div class="modal__form-control">
+              <input
+                type="password"
+                placeholder="Password"
+                id="password-login"
+              />
+              <i class="fa-regular fa-eye modal__eye"></i>
+              <i class="fa-regular fa-eye-slash modal__eye-slash"></i>
+              <small>Error message</small>
+            </div>
+            <button type="submit" id="login-submit" class="modal__btn-login">
+              Sign In
+            </button>
+            <a href="#!" id="btn-out-form"
+              ><i class="fa-solid fa-arrow-left"></i
+            ></a>
+
+            <div class="modal__form-footer-mobile">
+              <h2>Create A Account?</h2>
+              <a href="/register" class="modal__btn-register">Register</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======== FOOTER ======== -->
+    <footer id="footer" class="footer container-full">
+      <%- include('../../layouts/footer') %>
+    </footer>
+
+    <script src="javascripts/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,102 @@
+<div class="header__logo">
+  <a href="#">
+    <img src="/images/logo.svg" alt="Logo image" />
+  </a>
+</div>
+
+<div id="menu" class="header__menu">
+  <a href="/" class="header__menu-link">Home</a>
+  <a href="#home__serve" class="header__menu-link">How it works</a>
+  <a href="/menu" class="header__menu-link">Menu</a>
+  <a href="#home__about" class="header__menu-link">About</a>
+  <a href="#footer" class="header__menu-link">Contact</a>
+</div>
+
+<div id="header__search" class="header__search">
+  <span id="input-search" class="header__input header__input--nao">
+    <input
+      class="header__input-field header__input-field--nao"
+      type="text"
+      placeholder="Search keywords or foods..."
+    />
+    <svg
+      class="header__graphic header__graphic--nao"
+      width="300%"
+      height="100%"
+      viewBox="0 0 1200 60"
+      preserveAspectRatio="none"
+    >
+      <path
+        d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"
+      />
+    </svg>
+  </span>
+
+  <div id="header__product" class="header__product"></div>
+</div>
+
+<div class="header__action">
+  <a id="search" href="#" class="header__action-icon header__action-search">
+    <img src="/images/search.svg" alt="Search icon" />
+  </a>
+
+  <div id="cart" class="cart">
+    <a id="cart__icon" href="#!" class="header__action-icon cart__icon">
+      <img src="/images/cart.svg" alt="Cart icon" />
+      <span id="cart-quantity"><p>0</p></span>
+    </a>
+
+    <div id="cart-group" class="cart__group">
+      <div id="cart-list" class="cart__list">
+        <!-- Empty cart -->
+        <img
+          id="cart-empty"
+          class="cart__empty"
+          src="/images/empty-cart.jpg"
+          alt=""
+        />
+      </div>
+
+      <div class="cart__btn">
+        <button>Buy</button>
+      </div>
+    </div>
+  </div>
+
+  <a href="/login" id="btn-login" class="header__action-sign-in">
+    <img src="/images/sign-in.svg" alt="Sign in icon" />
+    Sign in
+  </a>
+</div>
+
+<!-- Menu Mobile -->
+<div class="header__menu-mobile">
+  <div class="header__icon-mobile">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="header__list-mobile">
+    <a
+      id="search-mobile"
+      href="#home__introduce"
+      class="header__action-mobile-icon header__action-mobile-search"
+    >
+      <img src="/images/search.svg" alt="Search icon" />
+    </a>
+    <a href="/" class="header__menu-mobile-link">Home</a>
+    <a href="#home__serve" class="header__menu-mobile-link">How it works</a>
+    <a href="/menu" class="header__menu-mobile-link">Menu</a>
+    <a href="#home__about" class="header__menu-mobile-link">About</a>
+    <a href="#footer" class="header__menu-mobile-link">Contact</a>
+    <a
+      href="/login"
+      id="btn-login-mobile"
+      class="header__action-sign-in-mobile"
+    >
+      <img src="/images/sign-in.svg" alt="Sign in icon" />
+      <p>Sign in</p>
+    </a>
+  </div>
+</div>
