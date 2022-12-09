@@ -5,7 +5,7 @@
 </p>
 
 <div id="card-list" class="home__card-list">
-  <% if (title == "Foodyar || Menu") { %>
+  <% if (title == "Foodyar" || title == "Foodyar || Menu") { %>
   <!--  -->
   <% foods.forEach( function( obj ) { %>
   <div class="home__card move-in-top delay-1" food-id="5" id="card-food">
@@ -37,8 +37,6 @@
       </div>
     </div>
   </div>
-
-  <button id="btn-menu" class="home__menu--btn">More Menu</button>
   <% }); %>
 
   <!--  -->
@@ -77,3 +75,7 @@
   </div>
   <% }); %> <% } %>
 </div>
+
+<% if (title == "Foodyar" || title == "Foodyar || Menu") { %>
+<button id="btn-menu" class="home__menu--btn">More Menu</button>
+<%} else { %> <% } %>
