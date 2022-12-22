@@ -63,12 +63,21 @@
     </div>
   </div>
 
-  <% if (title == "Foodyar" || title == "Foodyar || Menu") { %>
-  <a href="/" id="btn-profile" class="header__action-profile">
-    <img src="/images/profile.png" alt="Profile" />
-  </a>
-  <%} if (title == "Foodyar || Logout") { %>
-  <a href="/login" id="btn-login" class="header__action-sign-in">
+  <% if (user) { %>
+  <div class="header__profile">
+    <p class="header__profile--name"><%= user.name %></p>
+
+    <a href="/" id="btn-profile" class="header__profile-avatar">
+      <img src="<%= user.avatar %>" alt="Profile" />
+    </a>
+
+    <div class="header__profile-user">
+      <a href="/">Profile</a>
+      <a href="/users/logout">Logout</a>
+    </div>
+  </div>
+  <%} else { %>
+  <a href="/users/login" id="btn-login" class="header__action-sign-in">
     <img src="/images/sign-in.svg" alt="Sign in icon" />
     Sign in
   </a>

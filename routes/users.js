@@ -1,9 +1,17 @@
-var express = require('express');
-var router = express.Router();
+var express = require('express')
+var router = express.Router()
 
-/* GET users listing. */
-router.get('/', function (req, res, next) {
-  res.send('respond with a resource');
-});
+var loginController = require('../controllers/login_controller')
+var registerController = require('../controllers/register_controller')
+var logoutController = require('../controllers/logout_controller')
+var middlewareSession = require('../middlewares/redirectLogin')
 
-module.exports = router;
+router.get('/login', loginController.index)
+router.post('/login', loginController.create)
+
+router.get('/register', registerController.index)
+router.post('/register', registerController.create)
+
+router.get('/logout', logoutController.index)
+
+module.exports = router

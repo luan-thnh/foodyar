@@ -46,7 +46,7 @@
           <div>
             <h2>Create A Account?</h2>
 
-            <a href="/register" class="modal__btn-register">Register</a>
+            <a href="/users/register" class="modal__btn-register">Register</a>
           </div>
         </div>
 
@@ -60,14 +60,20 @@
             <!-- <img src="/images/bg-modal.jpg" alt="" /> -->
           </div>
           <form
-            action="/login"
+            action="/users/login"
+            method="post"
             id="form-login"
             class="modal__form-login"
             style="display: flex; opacity: 1; visibility: visible"
           >
             <h2>LOGIN</h2>
             <div class="modal__form-control">
-              <input type="email" placeholder="Email" id="email-login" />
+              <input
+                type="email"
+                placeholder="Email"
+                id="email-login"
+                name="email"
+              />
               <small>Error message</small>
             </div>
             <div class="modal__form-control">
@@ -75,6 +81,7 @@
                 type="password"
                 placeholder="Password"
                 id="password-login"
+                name="password"
               />
               <i class="fa-regular fa-eye modal__eye"></i>
               <i class="fa-regular fa-eye-slash modal__eye-slash"></i>
@@ -89,7 +96,7 @@
 
             <div class="modal__form-footer-mobile">
               <h2>Create A Account?</h2>
-              <a href="/register" class="modal__btn-register">Register</a>
+              <a href="/users/register" class="modal__btn-register">Register</a>
             </div>
           </form>
         </div>
@@ -101,6 +108,6 @@
       <%- include('../../layouts/footer') %>
     </footer>
 
-    <script src="javascripts/app.js"></script>
+    <script src="/javascripts/app.js"></script>
   </body>
 </html>

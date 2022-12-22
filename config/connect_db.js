@@ -1,16 +1,18 @@
-const { default: mongoose } = require('mongoose');
+const { default: mongoose } = require('mongoose')
 
-mongoose.set('strictQuery', true);
+require('dotenv').config()
+
+mongoose.set('strictQuery', true)
 
 async function connect() {
   try {
     await mongoose.connect(
       'mongodb+srv://foodyar:foodyar@cluster0.to3szhj.mongodb.net/foodyar'
-    );
-    console.log('Database connected!!');
+    )
+    console.log('Database connected!!')
   } catch (error) {
-    console.log('Database not connected!!');
+    console.log('Database not connected!!')
   }
 }
 
-module.exports = { connect };
+module.exports = { connect }

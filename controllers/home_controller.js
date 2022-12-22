@@ -1,8 +1,8 @@
-const Food = require('../models/food_model.js');
+const Product = require('../models/product.js')
 
 async function index(req, res, next) {
-  const foods = await Food.find({});
-  res.render('index', { title: 'Foodyar', foods });
+  const products = await Product.find({})
+  res.render('index', { title: 'Foodyar', products })
 }
 
-module.exports = { index };
+module.exports = { index }

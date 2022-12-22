@@ -1,277 +1,233 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta
-      property="og:image"
-      content="https://luan-thanhh.github.io/lets-food/assets/img/thumbnail.jpg"
-    />
+<!-- Sign Up -->
+<div id="background-scroll" class="home__register">
+  <h3 class="home__register--heading">
+    Join our member and get discount up to 50%
+  </h3>
+  <a href="/users/register" id="btn-register" class="home__register--btn"
+    >Sign Up</a
+  >
+</div>
+<!-- About -->
+<section id="home__about" class="home__about container">
+  <div class="home__about-content hide" style="text-align: center">
+    <p class="home__about--title">What the say</p>
+    <h5 class="home__about--heading" style="margin: 0 auto">
+      What Our Customers Say About Us
+    </h5>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <div
+      id="home__about-slide"
+      class="home__about-slide"
+      style="width: 105.2rem"
+    >
+      <div class="home__about-comment">
+        <div class="home__comment-user">
+          <div class="home__comment-avatar">
+            <img
+              src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/35.jpg"
+              alt=""
+            />
+          </div>
 
-    <link
-      rel="icon"
-      href="/images/favicon.svg"
-      type="image/gif"
-      sizes="16x16"
-    />
-    <title><%= title %></title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-  </head>
-  <body>
-    <!-- ======== HEADER ======== -->
-    <header id="header" class="header">
-      <%- include('../../layouts/header.ejs') %>
-    </header>
-
-    <!-- ======== MAIN ======== -->
-    <main id="main" class="home__main">
-      <!-- Introduce -->
-      <section id="home__introduce" class="home__introduce container-full">
-        <%- include('../../components/introduce') %>
-      </section>
-
-      <!-- Menu -->
-      <section id="home__menu" class="home__menu container mt-head">
-        <%- include('../../components/menu') %>
-      </section>
-
-      <!-- About -->
-      <section id="home__about" class="home__about container">
-        <div class="home__about-content hide" style="text-align: center">
-          <p class="home__about--title">What the say</p>
-          <h5 class="home__about--heading" style="margin: 0 auto">
-            What Our Customers Say About Us
-          </h5>
-
-          <div
-            id="home__about-slide"
-            class="home__about-slide"
-            style="width: 105.2rem"
-          >
-            <div class="home__about-comment">
-              <div class="home__comment-user">
-                <div class="home__comment-avatar">
-                  <img
-                    src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/35.jpg"
-                    alt=""
-                  />
-                </div>
-
-                <div class="home__comment-right">
-                  <h5 class="home__comment-name">Mr. Leticia Schuppe</h5>
-                  <div class="home__comment-rate">
-                    <i
-                      class="home__comment-star home__comment-star--bolder fa-regular fa-star hide"
-                    ></i>
-                    <i
-                      class="home__comment-star home__comment-star--yellow fa-solid fa-star show"
-                    ></i>
-                    <i
-                      class="home__comment-star home__comment-star--bolder fa-regular fa-star hide"
-                    ></i>
-                    <i
-                      class="home__comment-star home__comment-star--yellow fa-solid fa-star show"
-                    ></i>
-                    <i
-                      class="home__comment-star home__comment-star--bolder fa-regular fa-star hide"
-                    ></i>
-                    <i
-                      class="home__comment-star home__comment-star--yellow fa-solid fa-star show"
-                    ></i>
-                    <i
-                      class="home__comment-star home__comment-star--bolder fa-regular fa-star hide"
-                    ></i>
-                    <i
-                      class="home__comment-star home__comment-star--yellow fa-solid fa-star show"
-                    ></i>
-                    <i
-                      class="home__comment-star home__comment-star--bolder fa-regular fa-star hide"
-                    ></i>
-                    <i
-                      class="home__comment-star home__comment-star--yellow fa-solid fa-star show"
-                    ></i>
-                  </div>
-                </div>
-              </div>
-
-              <p class="home__about-comment--desc">
-                “Nihil iusto aliquam voluptatem dolores doloribus. Sit quo aut
-                voluptates. Dolores quis culpa accusantium quis rem voluptates
-                ex. Sapiente assumenda suscipit.”
-              </p>
-            </div>
-            <div class="home__about-comment">
-              <div class="home__comment-user">
-                <div class="home__comment-avatar">
-                  <img
-                    src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/708.jpg"
-                    alt=""
-                  />
-                </div>
-
-                <div class="home__comment-right">
-                  <h5 class="home__comment-name">Brittany Kunde</h5>
-                  <div class="home__comment-rate">
-                    <i
-                      class="home__comment-star home__comment-star--bolder fa-regular fa-star hide"
-                    ></i>
-                    <i
-                      class="home__comment-star home__comment-star--yellow fa-solid fa-star show"
-                    ></i>
-                    <i
-                      class="home__comment-star home__comment-star--bolder fa-regular fa-star hide"
-                    ></i>
-                    <i
-                      class="home__comment-star home__comment-star--yellow fa-solid fa-star show"
-                    ></i>
-                    <i
-                      class="home__comment-star home__comment-star--bolder fa-regular fa-star hide"
-                    ></i>
-                    <i
-                      class="home__comment-star home__comment-star--yellow fa-solid fa-star show"
-                    ></i>
-                    <i
-                      class="home__comment-star home__comment-star--bolder fa-regular fa-star hide"
-                    ></i>
-                    <i
-                      class="home__comment-star home__comment-star--yellow fa-solid fa-star show"
-                    ></i>
-                    <i
-                      class="home__comment-star home__comment-star--bolder fa-regular fa-star hide"
-                    ></i>
-                    <i
-                      class="home__comment-star home__comment-star--yellow fa-solid fa-star show"
-                    ></i>
-                  </div>
-                </div>
-              </div>
-
-              <p class="home__about-comment--desc">
-                “Vel nihil laboriosam. Sit eligendi aut ut natus consequatur
-                omnis. Qui modi consequatur. Possimus et occaecati sunt maiores
-                laborum omnis cum et fuga. Est hic ex occaecati. Tempore
-                temporibus voluptas rerum.”
-              </p>
-            </div>
-            <div class="home__about-comment">
-              <div class="home__comment-user">
-                <div class="home__comment-avatar">
-                  <img
-                    src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/136.jpg"
-                    alt=""
-                  />
-                </div>
-
-                <div class="home__comment-right">
-                  <h5 class="home__comment-name">Katie Toy</h5>
-                  <div class="home__comment-rate">
-                    <i
-                      class="home__comment-star home__comment-star--bolder fa-regular fa-star hide"
-                    ></i>
-                    <i
-                      class="home__comment-star home__comment-star--yellow fa-solid fa-star show"
-                    ></i>
-                    <i
-                      class="home__comment-star home__comment-star--bolder fa-regular fa-star hide"
-                    ></i>
-                    <i
-                      class="home__comment-star home__comment-star--yellow fa-solid fa-star show"
-                    ></i>
-                    <i
-                      class="home__comment-star home__comment-star--bolder fa-regular fa-star hide"
-                    ></i>
-                    <i
-                      class="home__comment-star home__comment-star--yellow fa-solid fa-star show"
-                    ></i>
-                    <i
-                      class="home__comment-star home__comment-star--bolder fa-regular fa-star hide"
-                    ></i>
-                    <i
-                      class="home__comment-star home__comment-star--yellow fa-solid fa-star show"
-                    ></i>
-                    <i
-                      class="home__comment-star home__comment-star--bolder fa-regular fa-star"
-                    ></i>
-                    <i
-                      class="home__comment-star home__comment-star--yellow fa-solid fa-star"
-                    ></i>
-                  </div>
-                </div>
-              </div>
-
-              <p class="home__about-comment--desc">
-                “Dolor minima consequatur fuga sit quia rem quis sequi non.
-                Facilis voluptatem est impedit in. Molestias sequi vero ut.
-                Laborum repellat cum et porro.”
-              </p>
+          <div class="home__comment-right">
+            <h5 class="home__comment-name">Mr. Leticia Schuppe</h5>
+            <div class="home__comment-rate">
+              <i
+                class="home__comment-star home__comment-star--bolder fa-regular fa-star hide"
+              ></i>
+              <i
+                class="home__comment-star home__comment-star--yellow fa-solid fa-star show"
+              ></i>
+              <i
+                class="home__comment-star home__comment-star--bolder fa-regular fa-star hide"
+              ></i>
+              <i
+                class="home__comment-star home__comment-star--yellow fa-solid fa-star show"
+              ></i>
+              <i
+                class="home__comment-star home__comment-star--bolder fa-regular fa-star hide"
+              ></i>
+              <i
+                class="home__comment-star home__comment-star--yellow fa-solid fa-star show"
+              ></i>
+              <i
+                class="home__comment-star home__comment-star--bolder fa-regular fa-star hide"
+              ></i>
+              <i
+                class="home__comment-star home__comment-star--yellow fa-solid fa-star show"
+              ></i>
+              <i
+                class="home__comment-star home__comment-star--bolder fa-regular fa-star hide"
+              ></i>
+              <i
+                class="home__comment-star home__comment-star--yellow fa-solid fa-star show"
+              ></i>
             </div>
           </div>
         </div>
-      </section>
-    </main>
 
-    <!-- ======== FOOTER ======== -->
-    <footer id="footer" class="footer container-full">
-      <%- include('../../layouts/footer') %>
-    </footer>
+        <p class="home__about-comment--desc">
+          “Nihil iusto aliquam voluptatem dolores doloribus. Sit quo aut
+          voluptates. Dolores quis culpa accusantium quis rem voluptates ex.
+          Sapiente assumenda suscipit.”
+        </p>
+      </div>
+      <div class="home__about-comment">
+        <div class="home__comment-user">
+          <div class="home__comment-avatar">
+            <img
+              src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/708.jpg"
+              alt=""
+            />
+          </div>
 
-    <script
-      type="text/javascript"
-      src="https://code.jquery.com/jquery-1.11.0.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
-    ></script>
+          <div class="home__comment-right">
+            <h5 class="home__comment-name">Brittany Kunde</h5>
+            <div class="home__comment-rate">
+              <i
+                class="home__comment-star home__comment-star--bolder fa-regular fa-star hide"
+              ></i>
+              <i
+                class="home__comment-star home__comment-star--yellow fa-solid fa-star show"
+              ></i>
+              <i
+                class="home__comment-star home__comment-star--bolder fa-regular fa-star hide"
+              ></i>
+              <i
+                class="home__comment-star home__comment-star--yellow fa-solid fa-star show"
+              ></i>
+              <i
+                class="home__comment-star home__comment-star--bolder fa-regular fa-star hide"
+              ></i>
+              <i
+                class="home__comment-star home__comment-star--yellow fa-solid fa-star show"
+              ></i>
+              <i
+                class="home__comment-star home__comment-star--bolder fa-regular fa-star hide"
+              ></i>
+              <i
+                class="home__comment-star home__comment-star--yellow fa-solid fa-star show"
+              ></i>
+              <i
+                class="home__comment-star home__comment-star--bolder fa-regular fa-star hide"
+              ></i>
+              <i
+                class="home__comment-star home__comment-star--yellow fa-solid fa-star show"
+              ></i>
+            </div>
+          </div>
+        </div>
 
-    <script>
-      const header = document.querySelector('#header');
-      const introduce = document.querySelector('.home__introduce');
+        <p class="home__about-comment--desc">
+          “Vel nihil laboriosam. Sit eligendi aut ut natus consequatur omnis.
+          Qui modi consequatur. Possimus et occaecati sunt maiores laborum omnis
+          cum et fuga. Est hic ex occaecati. Tempore temporibus voluptas rerum.”
+        </p>
+      </div>
+      <div class="home__about-comment">
+        <div class="home__comment-user">
+          <div class="home__comment-avatar">
+            <img
+              src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/136.jpg"
+              alt=""
+            />
+          </div>
 
-      // Handle scroll
-      window.onscroll = () => {
-        header.classList.toggle('sticky', window.scrollY > 80);
-      };
+          <div class="home__comment-right">
+            <h5 class="home__comment-name">Katie Toy</h5>
+            <div class="home__comment-rate">
+              <i
+                class="home__comment-star home__comment-star--bolder fa-regular fa-star hide"
+              ></i>
+              <i
+                class="home__comment-star home__comment-star--yellow fa-solid fa-star show"
+              ></i>
+              <i
+                class="home__comment-star home__comment-star--bolder fa-regular fa-star hide"
+              ></i>
+              <i
+                class="home__comment-star home__comment-star--yellow fa-solid fa-star show"
+              ></i>
+              <i
+                class="home__comment-star home__comment-star--bolder fa-regular fa-star hide"
+              ></i>
+              <i
+                class="home__comment-star home__comment-star--yellow fa-solid fa-star show"
+              ></i>
+              <i
+                class="home__comment-star home__comment-star--bolder fa-regular fa-star hide"
+              ></i>
+              <i
+                class="home__comment-star home__comment-star--yellow fa-solid fa-star show"
+              ></i>
+              <i
+                class="home__comment-star home__comment-star--bolder fa-regular fa-star"
+              ></i>
+              <i
+                class="home__comment-star home__comment-star--yellow fa-solid fa-star"
+              ></i>
+            </div>
+          </div>
+        </div>
 
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          entry.isIntersecting
-            ? entry.target.classList.add('fade')
-            : entry.target.classList.remove('fade');
-        });
-      });
+        <p class="home__about-comment--desc">
+          “Dolor minima consequatur fuga sit quia rem quis sequi non. Facilis
+          voluptatem est impedit in. Molestias sequi vero ut. Laborum repellat
+          cum et porro.”
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-      const hidesAll = document.querySelectorAll('.hide');
-      hidesAll.forEach((el) => observer.observe(el));
+<!-- Menu -->
+<section id="home__menu" class="home__menu container mt-head">
+  <%- include('../../components/menu') %>
+</section>
 
-      $(document).ready(function () {
-        $('.home__about-slide').slick({
-          autoplay: true,
-          autoplaySpeed: 2000,
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-          draggable: true,
-          arrows: false,
-          dots: true,
-        });
-      });
-    </script>
-  </body>
-</html>
+<script
+  type="text/javascript"
+  src="https://code.jquery.com/jquery-1.11.0.min.js"
+></script>
+<script
+  type="text/javascript"
+  src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+></script>
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+></script>
+
+<script>
+  const header = document.querySelector('#header')
+  const introduce = document.querySelector('.home__introduce')
+
+  // Handle scroll
+  window.onscroll = () => {
+    header.classList.toggle('sticky', window.scrollY > 80)
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      entry.isIntersecting
+        ? entry.target.classList.add('fade')
+        : entry.target.classList.remove('fade')
+    })
+  })
+
+  const hidesAll = document.querySelectorAll('.hide')
+  hidesAll.forEach((el) => observer.observe(el))
+
+  $(document).ready(function () {
+    $('.home__about-slide').slick({
+      autoplay: true,
+      autoplaySpeed: 2000,
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      infinite: true,
+      draggable: true,
+      arrows: false,
+      dots: true,
+    })
+  })
+</script>

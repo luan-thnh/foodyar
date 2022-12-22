@@ -426,9 +426,13 @@
 
   &__card-list {
     @include dFlex;
-    flex-wrap: wrap;
 
+    flex-wrap: wrap;
     padding-top: 3.2rem;
+    max-height: 755px;
+    overflow: hidden;
+    padding: 1.6rem 0;
+    transition: 1s;
 
     @include responsive($large) {
       justify-content: center;
@@ -437,6 +441,10 @@
 
     @include responsive($medium) {
       gap: 3.2rem;
+    }
+
+    &.show {
+      max-height: 9999px;
     }
   }
 

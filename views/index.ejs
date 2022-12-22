@@ -37,6 +37,7 @@
 
     <!-- ======== MAIN ======== -->
     <main id="main" class="home__main">
+      <% if (user) { %>
       <!-- Introduce -->
       <section id="home__introduce" class="home__introduce container-full">
         <%- include('./components/introduce') %>
@@ -223,14 +224,7 @@
           </div>
         </div>
       </section>
-
-      <!-- Sign Up -->
-      <div id="background-scroll" class="home__register">
-        <h3 class="home__register--heading">
-          Join our member and get discount up to 50%
-        </h3>
-        <button id="btn-register" class="home__register--btn">Sign Up</button>
-      </div>
+      <%} else { %> <%- include('./pages/logout/index.ejs') %> <% } %>
     </main>
 
     <!-- ======== FOOTER ======== -->
@@ -251,6 +245,6 @@
       src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
 
-    <script src="javascripts/app.js"></script>
+    <script src="/javascripts/app.js"></script>
   </body>
 </html>

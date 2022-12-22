@@ -526,7 +526,87 @@
     }
   }
 
-  &__action-profile {
+  &__profile {
+    @include dFlex($gap: 1.2rem);
+
+    position: relative;
+
+    &:hover .header__profile-user {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(80%) scale(1);
+    }
+
+    &--name {
+      font-weight: 600;
+      max-width: 6.2rem;
+      width: 100%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    @include responsive($large) {
+      display: none;
+    }
+  }
+
+  &__profile-user {
+    @include dFlexCol;
+
+    padding: 3.2rem;
+    position: absolute;
+    z-index: 3;
+    right: -20%;
+    bottom: -100%;
+    background-color: $whiteColor;
+    box-shadow: 0 0.5rem 1rem rgba($grayColor, 0.2);
+    border-radius: 1.6rem;
+    transform: scale(0.25);
+    transform-origin: calc(100% - 3.2rem) top;
+    will-change: opacity, transform;
+    opacity: 0;
+    transition: 0.3s;
+
+    a:first-child {
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid $blackColor;
+    }
+
+    a:last-child {
+      padding-top: 0.8rem;
+      font-weight: 600;
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: 24px;
+      height: 24px;
+      top: 0;
+      right: 3.2rem;
+      transform: translateY(-50%) rotate(45deg);
+      border-radius: 0.5rem;
+      background-color: $whiteColor;
+      box-shadow: -0.5rem -0.5rem 0.6rem rgba($grayColor, 0.1);
+      z-index: 1;
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 26px;
+      height: 26px;
+      top: 3px;
+      right: 3rem;
+      transform: translateY(-50%) rotate(45deg);
+      border-radius: 0.5rem;
+      background-color: $whiteColor;
+      z-index: 2;
+    }
+  }
+
+  &__profile-avatar {
     width: 48px;
     height: 48px;
     border-radius: 50%;

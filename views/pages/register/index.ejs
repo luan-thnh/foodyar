@@ -41,7 +41,7 @@
         <div class="modal__register">
           <div>
             <h2>Have A Account?</h2>
-            <a href="/login" class="modal__btn-login">Login</a>
+            <a href="/users/login" class="modal__btn-login">Login</a>
           </div>
           <div>
             <h2>Create A Account?</h2>
@@ -60,40 +60,105 @@
             <!-- <img src="/images/bg-modal.jpg" alt="" /> -->
           </div>
 
-          <div
+          <form
+            action="/users/register"
+            method="post"
             id="form-register"
             class="modal__form-register"
             style="opacity: 1; visibility: visible; display: flex"
           >
             <h2>REGISTER</h2>
+
+            <% if ( type === 'email') { %>
+            <div class="modal__form-control error">
+              <input
+                type="email"
+                placeholder="Email"
+                id="email-register"
+                name="email"
+              />
+              <small><%= error %> </small>
+            </div>
+            <%} else { %>
             <div class="modal__form-control">
-              <input type="email" placeholder="Email" id="email-register" />
+              <input
+                type="email"
+                placeholder="Email"
+                id="email-register"
+                name="email"
+              />
+              <small></small>
+            </div>
+            <% } %> <% if (type === 'name') { %>
+            <div class="modal__form-control error">
+              <input
+                type="text"
+                placeholder="User"
+                id="user-register"
+                name="name"
+              />
+              <small><%= error %> </small>
+            </div>
+            <%} else { %>
+            <div class="modal__form-control">
+              <input
+                type="text"
+                placeholder="User"
+                id="user-register"
+                name="name"
+              />
               <small>Error message</small>
             </div>
-            <div class="modal__form-control">
-              <input type="text" placeholder="User" id="user-register" />
-              <small>Error message</small>
+            <% } %> <% if (type === 'password') { %>
+            <div class="modal__form-control error">
+              <input
+                type="password"
+                placeholder="Password"
+                id="password-register"
+                name="password"
+              />
+              <i class="fa-regular fa-eye modal__eye"></i>
+              <i class="fa-regular fa-eye-slash modal__eye-slash"></i>
+              <small><%= error %></small>
             </div>
+            <%} else { %>
             <div class="modal__form-control">
               <input
                 type="password"
                 placeholder="Password"
                 id="password-register"
+                name="password"
               />
               <i class="fa-regular fa-eye modal__eye"></i>
               <i class="fa-regular fa-eye-slash modal__eye-slash"></i>
               <small>Error message</small>
             </div>
+            <% } %> <% if (type === 'password2') { %>
+            <div class="modal__form-control error">
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                id="password-confirm-register"
+                name="password2"
+              />
+              <i class="fa-regular fa-eye modal__eye"></i>
+              <i class="fa-regular fa-eye-slash modal__eye-slash"></i>
+              <small><%= error %></small>
+            </div>
+            <%} else { %>
             <div class="modal__form-control">
               <input
                 type="password"
                 placeholder="Confirm Password"
                 id="password-confirm-register"
+                name="password2"
               />
               <i class="fa-regular fa-eye modal__eye"></i>
               <i class="fa-regular fa-eye-slash modal__eye-slash"></i>
               <small>Error message</small>
             </div>
+            <% } %>
+
             <button id="register-submit" class="modal__btn-register">
               Sign Up
             </button>
@@ -103,9 +168,9 @@
 
             <div class="modal__form-footer-mobile">
               <h2>Have A Account?</h2>
-              <a href="/login" class="modal__btn-login">Login</a>
+              <a href="/users/login" class="modal__btn-login">Login</a>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
@@ -114,7 +179,6 @@
     <footer id="footer" class="footer container-full">
       <%- include('../../layouts/footer') %>
     </footer>
-
-    <script src="javascripts/app.js"></script>
   </body>
+  <script src="/javascripts/app.js"></script>
 </html>

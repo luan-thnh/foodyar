@@ -1,8 +1,10 @@
-const Food = require('../models/food_model.js');
-
-async function index(req, res, next) {
-  const foods = await Food.find({});
-  res.render('pages/logout/index', { title: 'Foodyar || Logout', foods });
+function index(req, res, next) {
+  req.logout(function (err) {
+    if (err) {
+      return next(err)
+    }
+    res.redirect('/')
+  })
 }
 
-module.exports = { index };
+module.exports = { index }

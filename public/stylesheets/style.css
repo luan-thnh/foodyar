@@ -1650,14 +1650,89 @@ a {
 .header__action-mobile-icon:active {
   transform: translateY(0) scale(1);
 }
-.header__action-profile {
+.header__profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.2rem;
+  position: relative;
+}
+.header__profile:hover .header__profile-user {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(80%) scale(1);
+}
+.header__profile--name {
+  font-weight: 600;
+  max-width: 6.2rem;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+@media (max-width: 992px) {
+  .header__profile {
+    display: none;
+  }
+}
+.header__profile-user {
+  display: flex;
+  flex-direction: column;
+  padding: 3.2rem;
+  position: absolute;
+  z-index: 3;
+  right: -20%;
+  bottom: -100%;
+  background-color: #ffffff;
+  box-shadow: 0 0.5rem 1rem rgba(29, 29, 29, 0.2);
+  border-radius: 1.6rem;
+  transform: scale(0.25);
+  transform-origin: calc(100% - 3.2rem) top;
+  will-change: opacity, transform;
+  opacity: 0;
+  transition: 0.3s;
+}
+.header__profile-user a:first-child {
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid #1d1d1d;
+}
+.header__profile-user a:last-child {
+  padding-top: 0.8rem;
+  font-weight: 600;
+}
+.header__profile-user::after {
+  position: absolute;
+  content: "";
+  width: 24px;
+  height: 24px;
+  top: 0;
+  right: 3.2rem;
+  transform: translateY(-50%) rotate(45deg);
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  box-shadow: -0.5rem -0.5rem 0.6rem rgba(29, 29, 29, 0.1);
+  z-index: 1;
+}
+.header__profile-user::before {
+  position: absolute;
+  content: "";
+  width: 26px;
+  height: 26px;
+  top: 3px;
+  right: 3rem;
+  transform: translateY(-50%) rotate(45deg);
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  z-index: 2;
+}
+.header__profile-avatar {
   width: 48px;
   height: 48px;
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(29, 29, 29, 0.6);
 }
-.header__action-profile img {
+.header__profile-avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -2366,6 +2441,10 @@ a {
   gap: 0;
   flex-wrap: wrap;
   padding-top: 3.2rem;
+  max-height: 755px;
+  overflow: hidden;
+  padding: 1.6rem 0;
+  transition: 1s;
 }
 @media (max-width: 992px) {
   .home__card-list {
@@ -2377,6 +2456,9 @@ a {
   .home__card-list {
     gap: 3.2rem;
   }
+}
+.home__card-list.show {
+  max-height: 9999px;
 }
 .home__card {
   padding: 4.8rem 3.6rem;

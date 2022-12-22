@@ -1,5 +1,17 @@
+var passport = require('passport')
+
 function index(req, res, next) {
-  res.render('pages/login/index', { title: 'Foodyar || Login' });
+  if (res.locals.user) res.redirect('/')
+
+  res.render('pages/login', { title: 'Foodyar || Login' })
 }
 
-module.exports = { index };
+async function create(req, res, next) {
+  passport.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect: '/users/login',
+    failureFlash: true,
+  })(req, res, next)
+}
+
+module.exports = { index, create }

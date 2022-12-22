@@ -5,9 +5,7 @@
 </p>
 
 <div id="card-list" class="home__card-list">
-  <% if (title == "Foodyar" || title == "Foodyar || Menu") { %>
-  <!--  -->
-  <% foods.forEach( function( obj ) { %>
+  <% if (user) { %> <% products.forEach( function( obj ) { %>
   <div class="home__card move-in-top delay-1" food-id="5" id="card-food">
     <div class="home__card-picture">
       <img src="<%= obj.thumbnail %>" alt="<%= obj.name %>" />
@@ -37,13 +35,8 @@
       </div>
     </div>
   </div>
-  <% }); %>
-
-  <!--  -->
-
-  <%} if (title == "Foodyar || Logout") { %>
-  <!--  -->
-  <% foods.slice(0,4).forEach( function( obj ) { %>
+  <% }) %> <%} if (!user) { %> <% products.slice(0,4).forEach( function( obj ) {
+  %>
   <div class="home__card move-in-top delay-1" food-id="5" id="card-food">
     <div class="home__card-picture">
       <img src="<%= obj.thumbnail %>" alt="<%= obj.name %>" />
@@ -73,9 +66,9 @@
       </div>
     </div>
   </div>
-  <% }); %> <% } %>
+  <% }) %> <% } %>
 </div>
 
-<% if (title == "Foodyar" || title == "Foodyar || Menu") { %>
+<% if (user) { %>
 <button id="btn-menu" class="home__menu--btn">More Menu</button>
 <%} else { %> <% } %>
