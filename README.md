@@ -15,7 +15,6 @@ $ npm start
 #### **Note:**
 
 - Home page: http://localhost:3000/
-- Login page: http://localhost:3000/login
-- Register page: http://localhost:3000/register
+- Login page: http://localhost:3000/users/login
+- Register page: http://localhost:3000/users/register
 - Menu page: http://localhost:3000/menu
-- Logout page: http://localhost:3000/logout
