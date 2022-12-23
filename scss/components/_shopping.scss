@@ -1,0 +1,110 @@
+#cart-container table {
+  margin-top: $heightHeader;
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 16px;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2),
+    -3px -3px 16px rgba(255, 255, 255, 0.5);
+}
+
+#cart-container table thead {
+  font-weight: 700;
+}
+
+#cart-container table thead td {
+  background: #ffcb45;
+  color: #fff;
+  border: none;
+  padding: 16px 0;
+}
+
+#cart-container table td {
+  text-align: center;
+}
+
+#cart-container table tbody h5 {
+  @include textBody;
+}
+
+#cart-container table tr {
+}
+
+#cart-container table td:nth-child(1) {
+  width: 100px;
+}
+
+#cart-container table td:nth-child(2),
+#cart-container table td:nth-child(3) {
+  width: 200px;
+}
+
+#cart-container table td:nth-child(4),
+#cart-container table td:nth-child(5),
+#cart-container table td:nth-child(6) {
+  width: 170px;
+}
+
+#cart-container table tbody img {
+  width: 100px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin: 12px 0;
+}
+
+#cart-container table tbody i {
+  color: #8d8c89;
+}
+
+#cart-bottom .coupon > div {
+  border: 1px solid #b6b3b3;
+}
+
+#cart-bottom .coupon h5,
+#cart-bottom h5 {
+  background: #fd8c66;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  font-weight: 700;
+}
+
+#cart-bottom .coupon p,
+#cart-bottom .coupon input {
+  padding: 0 12px;
+}
+
+#cart-bottom .coupon input {
+  height: 44px;
+}
+
+#cart-bottom .coupon input,
+#cart-bottom .coupon button {
+  margin: 0 0 20px 12px;
+}
+
+#cart-bottom .total div > div {
+  padding: 0 12px;
+}
+
+#cart-bottom h6 {
+  @include heading2;
+}
+
+#cart-bottom p {
+  @include textTitle;
+}
+
+.second-hr {
+  background-color: #b8b7b3;
+  width: 100%;
+  height: 1px;
+}
+
+#cart-bottom div > a {
+  @include btnPrimary;
+  margin-top: 1.6rem;
+}

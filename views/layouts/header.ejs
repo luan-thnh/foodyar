@@ -1,5 +1,5 @@
 <div class="header__logo">
-  <a href="#">
+  <a href="/">
     <img src="/images/logo.svg" alt="Logo image" />
   </a>
 </div>
@@ -41,20 +41,25 @@
   </a>
 
   <div id="cart" class="cart">
-    <a id="cart__icon" href="#!" class="header__action-icon cart__icon">
+    <a id="cart__icon" href="/shopping" class="header__action-icon cart__icon">
       <img src="/images/cart.svg" alt="Cart icon" />
-      <span id="cart-quantity"><p>0</p></span>
+      <span id="cart-quantity"
+        ><p>
+          <% if (session.cart && user) { %> <%= session.cart.totalQuantity %>
+          <%} else { %> 0<% } %>
+        </p></span
+      >
     </a>
 
     <div id="cart-group" class="cart__group">
       <div id="cart-list" class="cart__list">
         <!-- Empty cart -->
-        <img
+        <!-- <img
           id="cart-empty"
           class="cart__empty"
           src="/images/empty-cart.jpg"
           alt=""
-        />
+        /> -->
       </div>
 
       <div class="cart__btn">

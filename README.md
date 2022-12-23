@@ -18,3 +18,4 @@ $ npm start
 - Login page: http://localhost:3000/users/login
 - Register page: http://localhost:3000/users/register
 - Menu page: http://localhost:3000/menu
+- Shopping page: http://localhost:3000/shopping

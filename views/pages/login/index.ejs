@@ -28,13 +28,14 @@
     />
     <title><%= title %></title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
+
+    <style>
+      html {
+        overflow: hidden;
+      }
+    </style>
   </head>
   <body>
-    <!-- ======== HEADER ======== -->
-    <header id="header" class="header">
-      <%- include('../../layouts/header.ejs') %>
-    </header>
-
     <!-- ======== Login ======== -->
     <div id="modal" class="modal show">
       <div class="modal__login">
@@ -102,11 +103,6 @@
         </div>
       </div>
     </div>
-
-    <!-- ======== FOOTER ======== -->
-    <footer id="footer" class="footer container-full">
-      <%- include('../../layouts/footer') %>
-    </footer>
 
     <script src="/javascripts/app.js"></script>
   </body>

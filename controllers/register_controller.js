@@ -21,15 +21,13 @@ function create(req, res, next) {
 
   var { error } = UserValidate.registerValidator(req.body)
 
-  console.log(error)
-
   if (error) {
-    // res.render('pages/register/index', {git add
-    //   title: 'Foodyar || Register',
-    //   error: error.details[0].message,
-    //   type: error.details[0].message.split('"')[1],
-    // })
-    res.redirect('/users/register')
+    res.render('pages/register/index', {
+      title: 'Foodyar || Register',
+      error: error.details[0].message,
+      type: error.details[0].message.split('"')[1],
+    })
+    // res.redirect('/users/register')
   } else {
     User.findOne({ email: email }, function (err, user) {
       if (err) console.log(err)

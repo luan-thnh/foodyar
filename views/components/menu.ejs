@@ -9,14 +9,18 @@
   <div class="home__card move-in-top delay-1" food-id="5" id="card-food">
     <div class="home__card-picture">
       <img src="<%= obj.thumbnail %>" alt="<%= obj.name %>" />
-      <button class="home__card--btn-add-cart">Add</button>
+      <a href="/add-to-cart/<%= obj.id %>" class="home__card--btn-add-cart"
+        >Add</a
+      >
     </div>
 
     <div class="home__card-content">
       <h5 class="home__card--name"><%= obj.name %></h5>
       <p class="home__card--desc"><%= obj.description %></p>
       <div class="home__card-bottom">
-        <p id="card-price"><%= obj.price %> VND</p>
+        <p id="card-price">
+          <%= obj.price.toString().replace(/(.)(?=(\d{3})+$)/g,'$1,') %> VND
+        </p>
         <span id="card-like" class="home__card-like"
           ><svg
             width="23"
@@ -47,7 +51,9 @@
       <h5 class="home__card--name"><%= obj.name %></h5>
       <p class="home__card--desc"><%= obj.description %></p>
       <div class="home__card-bottom">
-        <p id="card-price"><%= obj.price %> VND</p>
+        <p id="card-price">
+          <%= obj.price.toString().replace(/(.)(?=(\d{3})+$)/g,'$1,') %> VND
+        </p>
         <span id="card-like" class="home__card-like"
           ><svg
             width="23"

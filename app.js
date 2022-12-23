@@ -6,6 +6,7 @@ var session = require('express-session')
 var passport = require('passport')
 var bodyParser = require('body-parser')
 var flash = require('connect-flash')
+var MongoStore = require('connect-mongo')
 // var logger = require('morgan')
 
 var port = process.env.PORT || 3000
@@ -14,6 +15,7 @@ var indexRouter = require('./routes/index')
 var usersRouter = require('./routes/users')
 
 var db = require('./config/connect_db.js')
+const { default: mongoose } = require('mongoose')
 
 var app = express()
 
@@ -34,10 +36,20 @@ app.use(flash())
 app.use(
   session({
     secret: 'keyboard secret',
-    resave: true,
-    saveUninitialized: true,
+    resave: false,
+    saveUninitialized: false,
+    store: MongoStore.create({
+      mongoUrl:
+        'mongodb+srv://foodyar:foodyar@cluster0.to3szhj.mongodb.net/foodyar',
+    }),
+    cookie: { maxAge: 180 * 60 * 1000 },
   })
 )
+
+app.use(function (req, res, next) {
+  res.locals.session = req.session
+  next()
+})
 
 require('./config/passport')(passport)
 
