@@ -16,6 +16,7 @@ router.get('/reduce/:id', cartController.reduce)
 
 router.get('/shopping', shoppingController.index)
 router.get('/shopping/checkout', shoppingController.checkout)
+router.get('/shopping/product/:id', shoppingController.product)
 
 router.get('/search', searchController.index)
 router.post('/search', searchController.create)

@@ -202,31 +202,18 @@
   }
 
   // menu-modal
-  &__menu-modal.open {
-    opacity: 1;
-    visibility: visible;
-    transform: translate(-50%, -50%) scale(1);
+
+  &__menu-modal {
+    @include dFlex(center, center);
+    margin-top: $heightHeader;
 
     @include responsive($small) {
       width: 100%;
       height: 100%;
     }
-  }
-
-  &__menu-modal {
-    @include dFlex(center, center);
-    display: flex;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.4);
-    z-index: 999;
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.8s;
 
     &--container {
-      @include dFlex();
+      @include dFlex($gap: 16rem);
       padding: 4.8rem;
       background-color: $whiteColor;
       border-radius: 1.5rem;
@@ -242,7 +229,7 @@
       }
     }
     &--img {
-      max-width: 30rem;
+      max-width: 54rem;
       width: 100%;
       margin-right: 3rem;
       border-radius: 1.5rem;
@@ -256,7 +243,7 @@
 
       img {
         width: 100%;
-        max-height: 16rem;
+        max-height: 24rem;
         height: 100%;
         object-fit: cover;
         border-radius: 1.5rem;
@@ -266,9 +253,9 @@
     &--desc {
       margin-top: 3.2rem;
       padding: 1.6rem;
-      max-height: 22rem;
+      max-height: 32rem;
       height: 100%;
-      overflow-y: scroll;
+      overflow-y: auto;
     }
 
     &--content {
@@ -578,6 +565,14 @@
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
+      a {
+        display: inline-block;
+        transition: text-decoration 0.3s;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
 
     &--desc {
@@ -1047,7 +1042,7 @@
   &__form-search {
     width: 550px;
     margin: 0 auto;
-    margin-top: 4.8rem;
+    margin-top: calc($heightHeader + 4.8rem);
     display: flex;
     gap: 3.2rem;
   }
@@ -1074,5 +1069,44 @@
 
   &__btn-search {
     @include btnPrimary;
+  }
+
+  &__user-file {
+    margin-top: 1.6rem;
+    color: transparent;
+    transition: 0.3s;
+
+    &::-webkit-file-upload-button {
+      visibility: hidden;
+    }
+
+    &::before {
+      content: 'Choose file';
+      color: $yellowColor;
+      display: inline-block;
+      background: transparent;
+      border: 1px solid $yellowColor;
+      border-radius: 10px;
+      padding: 8px 16px;
+      outline: none;
+      white-space: nowrap;
+      -webkit-user-select: none;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 10pt;
+      transition: 0.3s;
+    }
+
+    &:hover {
+      transform: translateY(-3px) scale(1.025);
+    }
+
+    &:active {
+      transform: translateY(0) scale(1);
+    }
+
+    &:active::before {
+      transform: translateY(0) scale(1);
+    }
   }
 }

@@ -15,7 +15,9 @@
     </div>
 
     <div class="home__card-content">
-      <h5 class="home__card--name"><%= obj.name %></h5>
+      <h5 class="home__card--name">
+        <a href="/shopping/product/<%= obj.id %>"><%= obj.name %></a>
+      </h5>
       <p class="home__card--desc"><%= obj.description %></p>
       <div class="home__card-bottom">
         <p id="card-price">
@@ -48,7 +50,9 @@
     </div>
 
     <div class="home__card-content">
-      <h5 class="home__card--name"><%= obj.name %></h5>
+      <h5 class="home__card--name">
+        <a href="/shopping/product/<%= obj.id %>"><%= obj.name %></a>
+      </h5>
       <p class="home__card--desc"><%= obj.description %></p>
       <div class="home__card-bottom">
         <p id="card-price">

@@ -1,6 +1,7 @@
 var User = require('../models/user')
 
 function index(req, res, next) {
+  // console.log(req.user)
   res.render('pages/profile', { title: 'Foodyar || Profile' })
 }
 
@@ -19,7 +20,7 @@ async function update(req, res, next) {
         $set: {
           name: req.body.name,
           email: req.body.email,
-          avatar: req.file.filename,
+          avatar: '/uploads/' + req.file.filename,
           address: req.body.address,
         },
       },

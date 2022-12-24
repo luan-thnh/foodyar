@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta
+      property="og:image"
+      content="https://luan-thanhh.github.io/lets-food/assets/img/thumbnail.jpg"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      rel="icon"
+      href="/images/favicon.svg"
+      type="image/gif"
+      sizes="16x16"
+    />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <!-- ======== HEADER ======== -->
+    <header id="header" class="header">
+      <%- include('../../layouts/header.ejs') %>
+    </header>
+
+    <div class="home__menu-modal open">
+      <div class="home__menu-modal--container">
+        <div class="home__menu-modal--img">
+          <img src="<%= product.thumbnail %>" alt="" />
+          <p class="home__menu-modal--desc"><%= product.description %></p>
+        </div>
+        <div class="home__menu-modal--content">
+          <p class="home__menu-modal--title"><%= product.name %></p>
+          <div class="home__menu-modal--rate">
+            <span class="span-title"><%= product.rate %>.0</span>
+            <div class="home__modal-rate--group">
+              <% for(var i=0; i< product.rate ; i++) {%>
+              <span class="fa fa-star checked"></span>
+              <% } %>
+            </div>
+          </div>
+          <div class="home__menu-modal--price">
+            <span
+              ><%= product.price.toString().replace(/(.)(?=(\d{3})+$)/g,'$1,')
+              %> VND</span
+            >
+          </div>
+
+          <div class="home__menu-modal--buy">
+            <button class="home__menu-modal--addCart">
+              <a href="/add-to-cart/<%= product.id %>">
+                <img src="/images/cart.svg" alt="Cart icon" />
+                <span>Add to cart</span>
+              </a>
+            </button>
+            <button class="home__menu-modal--buyNow">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer" class="footer container-full" style="margin-top: 0">
+      <%- include('../../layouts/footer') %>
+    </footer>
+
+    <script src="/javascripts/app.js"></script>
+  </body>
+</html>

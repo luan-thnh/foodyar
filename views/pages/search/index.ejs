@@ -30,6 +30,11 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
+    <!-- ======== HEADER ======== -->
+    <header id="header" class="header">
+      <%- include('../../layouts/header.ejs') %>
+    </header>
+
     <form action="/search" method="post" class="home__form-search">
       <input
         type="text"
@@ -42,7 +47,14 @@
 
     <section id="home__menu" class="home__menu container">
       <div id="card-list" class="home__card-list">
-        <% products.forEach( function( obj ) { %>
+        <% if (products.length === 0) { %>
+        <img
+          id="cart-empty"
+          class="cart__empty"
+          src="/images/empty-cart.jpg"
+          alt=""
+        />
+        <%} else { %> <% products.forEach( function( obj ) { %>
         <div class="home__card move-in-top delay-1" food-id="5" id="card-food">
           <div class="home__card-picture">
             <img src="<%= obj.thumbnail %>" alt="<%= obj.name %>" />
@@ -79,9 +91,14 @@
             </div>
           </div>
         </div>
-        <% }) %>
+        <% }) %> <% } %>
       </div>
     </section>
+
+    <!-- ======== FOOTER ======== -->
+    <footer id="footer" class="footer container-full">
+      <%- include('../../layouts/footer') %>
+    </footer>
 
     <script src="/javascripts/app.js"></script>
   </body>

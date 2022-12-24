@@ -1,7 +1,12 @@
 const Product = require('../models/product.js')
 
 function index(req, res, next) {
-  res.render('pages/search', { title: 'Foodyar || Search', products: [] })
+  console.log(req.user)
+  res.render('pages/search', {
+    title: 'Foodyar || Search',
+    products: [],
+    user: req.user,
+  })
 }
 
 async function create(req, res, next) {
@@ -13,6 +18,7 @@ async function create(req, res, next) {
   res.render('pages/search', {
     title: 'Foodyar || Search',
     products: products,
+    user: req.user,
   })
 }
 
