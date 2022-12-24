@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta
+      property="og:image"
+      content="https://luan-thanhh.github.io/lets-food/assets/img/thumbnail.jpg"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      rel="icon"
+      href="/images/favicon.svg"
+      type="image/gif"
+      sizes="16x16"
+    />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <form action="/search" method="post" class="home__form-search">
+      <input
+        type="text"
+        name="search"
+        class="home__search"
+        placeholder="Search keywords..."
+      />
+      <button class="home__btn-search">Search</button>
+    </form>
+
+    <section id="home__menu" class="home__menu container">
+      <div id="card-list" class="home__card-list">
+        <% products.forEach( function( obj ) { %>
+        <div class="home__card move-in-top delay-1" food-id="5" id="card-food">
+          <div class="home__card-picture">
+            <img src="<%= obj.thumbnail %>" alt="<%= obj.name %>" />
+            <a
+              href="/add-to-cart/<%= obj.id %>"
+              class="home__card--btn-add-cart"
+              >Add</a
+            >
+          </div>
+
+          <div class="home__card-content">
+            <h5 class="home__card--name"><%= obj.name %></h5>
+            <p class="home__card--desc"><%= obj.description %></p>
+            <div class="home__card-bottom">
+              <p id="card-price">
+                <%= obj.price.toString().replace(/(.)(?=(\d{3})+$)/g,'$1,') %>
+                VND
+              </p>
+              <span id="card-like" class="home__card-like"
+                ><svg
+                  width="23"
+                  height="20"
+                  viewBox="0 0 23 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11.9644 3.12862C8.29122 -2.54509 0.856934 0.545766 0.856934 6.72634C0.856934 11.3675 11.0489 18.6275 11.9644 19.5715C12.8861 18.6275 22.5712 11.3675 22.5712 6.72634C22.5712 0.592623 15.6444 -2.54509 11.9644 3.12862Z"
+                    fill="#1D1D1D"
+                    fill-opacity="0.7"
+                  ></path>
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </section>
+
+    <script src="/javascripts/app.js"></script>
+  </body>
+</html>

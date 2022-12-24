@@ -6,8 +6,8 @@
   border-radius: 15px;
   overflow: hidden;
   padding: 16px;
-  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2),
-    -3px -3px 16px rgba(255, 255, 255, 0.5);
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1),
+    -1px -1px 16px rgba(255, 255, 255, 0.2);
 }
 
 #cart-container table thead {
@@ -48,15 +48,30 @@
 }
 
 #cart-container table tbody img {
-  width: 100px;
-  height: 60px;
+  width: 80px;
+  height: 50px;
   object-fit: cover;
   border-radius: 5px;
   margin: 12px 0;
 }
 
 #cart-container table tbody i {
-  color: #8d8c89;
+  color: $grayColor;
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.125);
+    color: $yellowColor;
+  }
+
+  &:active {
+    transform: scale(1);
+    color: $grayColor;
+  }
+}
+
+#cart-bottom {
+  padding: 16px;
 }
 
 #cart-bottom .coupon > div {
@@ -95,7 +110,8 @@
 }
 
 #cart-bottom p {
-  @include textTitle;
+  @include textBody;
+  font-weight: 700;
 }
 
 .second-hr {

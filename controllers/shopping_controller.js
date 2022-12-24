@@ -14,4 +14,15 @@ function index(req, res, next) {
   })
 }
 
-module.exports = { index }
+function checkout(req, res, next) {
+  if (!req.session.cart) {
+    return res.redirect('shop/index')
+  }
+  var cart = new Cart(req.session.cart)
+  res.render('pages/shop/checkout', {
+    title: 'Foodyar || Checkout',
+    total: cart.totalPrice,
+  })
+}
+
+module.exports = { index, checkout }

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta
+      property="og:image"
+      content="https://luan-thanhh.github.io/lets-food/assets/img/thumbnail.jpg"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      rel="icon"
+      href="/images/favicon.svg"
+      type="image/gif"
+      sizes="16x16"
+    />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <!-- ======== HEADER ======== -->
+    <header id="header" class="header">
+      <%- include('../../layouts/header.ejs') %>
+    </header>
+
+    <main id="home__main" class="home__menu container mt-head">
+      <div class="home__profile">
+        <div class="home__user">
+          <h1>User</h1>
+          <img src="<%= user.avatar %>" alt="" class="home__user-avatar" />
+          <div class="home__user-group">
+            <p class="home__user-label">Name:</p>
+            <p class="home__user-text"><%= user.name %></p>
+          </div>
+          <div class="home__user-group">
+            <p class="home__user-label">Email:</p>
+            <p class="home__user-text"><%= user.email %></p>
+          </div>
+          <div class="home__user-group">
+            <p class="home__user-label">Address:</p>
+            <p class="home__user-text"><%= user.address %></p>
+          </div>
+
+          <a
+            href="/users/profile/edit/<%= user._id %>"
+            class="home__user--btn-edit"
+            >Edit</a
+          >
+          <a href="/users/logout" class="home__user--btn-logout">Logout</a>
+        </div>
+
+        <div class="home__history">
+          <h1>History</h1>
+          <div class="home__history-list">
+            <div class="home__history-item">
+              <div class="home__history-item--thumbnail">
+                <img
+                  src="https://food-network.netlify.app/assets/food-1.826e4aa7.png"
+                  alt=""
+                />
+              </div>
+              <div class="home__history-item--name">Roast Turkey</div>
+              <div class="home__history-item--price">160,000VND</div>
+            </div>
+            <div class="home__history-item">
+              <div class="home__history-item--thumbnail">
+                <img
+                  src="https://food-network.netlify.app/assets/food-1.826e4aa7.png"
+                  alt=""
+                />
+              </div>
+              <div class="home__history-item--name">Roast Turkey</div>
+              <div class="home__history-item--price">160,000VND</div>
+            </div>
+            <div class="home__history-item">
+              <div class="home__history-item--thumbnail">
+                <img
+                  src="https://food-network.netlify.app/assets/food-1.826e4aa7.png"
+                  alt=""
+                />
+              </div>
+              <div class="home__history-item--name">Roast Turkey</div>
+              <div class="home__history-item--price">160,000VND</div>
+            </div>
+            <div class="home__history-item">
+              <div class="home__history-item--thumbnail">
+                <img
+                  src="https://food-network.netlify.app/assets/food-1.826e4aa7.png"
+                  alt=""
+                />
+              </div>
+              <div class="home__history-item--name">Roast Turkey</div>
+              <div class="home__history-item--price">160,000VND</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ======== FOOTER ======== -->
+    <footer id="footer" class="footer container-full">
+      <%- include('../../layouts/footer') %>
+    </footer>
+
+    <script src="/javascripts/app.js"></script>
+  </body>
+</html>

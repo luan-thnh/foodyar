@@ -16,12 +16,6 @@ inputForms.forEach(
     })
 )
 
-btnMenu.onclick = (e) => {
-  e.preventDefault()
-
-  cardList.classList.toggle('show')
-}
-
 // Handler click show password
 eyeSlashIcons.forEach(
   (eyeSlashIcon, index) =>
@@ -42,6 +36,14 @@ eyeIcons.forEach(
     })
 )
 
+if (btnMenu) {
+  btnMenu.onclick = (e) => {
+    e.preventDefault()
+
+    cardList.classList.toggle('show')
+  }
+}
+
 // Handle scroll
 window.onscroll = () => {
   header.classList.toggle('sticky', window.scrollY > 80)
@@ -58,15 +60,17 @@ const observer = new IntersectionObserver((entries) => {
 const hidesAll = document.querySelectorAll('.hide')
 hidesAll.forEach((el) => observer.observe(el))
 
-$(document).ready(function () {
-  $('.home__about-slide').slick({
-    autoplay: true,
-    autoplaySpeed: 2000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    infinite: true,
-    draggable: true,
-    arrows: false,
-    dots: true,
+if (document.querySelectorAll('.home__about-slide')) {
+  $(document).ready(function () {
+    $('.home__about-slide').slick({
+      autoplay: true,
+      autoplaySpeed: 2000,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      infinite: true,
+      draggable: true,
+      arrows: false,
+      dots: true,
+    })
   })
-})
+}

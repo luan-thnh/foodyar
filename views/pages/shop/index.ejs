@@ -49,6 +49,7 @@
       <%- include('../../layouts/header.ejs') %>
     </header>
 
+    <% if (session.cart.totalQuantity > 0) { %>
     <section id="blog-home" class="container">
       <h2 class="font-weight-bold pt-5">SHOPPING CART</h2>
       <hr />
@@ -71,7 +72,9 @@
           <% if (user) { %> <% products.forEach( function( obj ) { %>
           <tr>
             <td>
-              <a href="#"><i class="fa-regular fa-trash-can"></i></a>
+              <a href="/reduce/<%= obj.item._id %>"
+                ><i class="fa-regular fa-trash-can"></i
+              ></a>
             </td>
             <td>
               <img src="<%= obj.item.thumbnail %>" alt="" />
@@ -111,16 +114,26 @@
           <%= totalPrice.toString().replace(/(.)(?=(\d{3})+$)/g,'$1,') %> VND
         </p>
       </div>
-      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <a href="#" class="btn btn-dark" type="button">CHECKOUT</a>
+      <div class="d-grid gap-2 d-md-flex justify-content-center">
+        <a href="/shopping/checkout" class="btn btn-dark" type="button"
+          >CHECKOUT</a
+        >
       </div>
     </section>
+
+    <%} else { %>
+    <img
+      id="cart-empty"
+      class="cart__empty mt-header"
+      src="/images/empty-cart.jpg"
+      alt=""
+    /><% } %>
+
     <!-- ======== FOOTER ======== -->
     <footer id="footer" class="footer container-full">
       <%- include('../../layouts/footer') %>
     </footer>
 
-    <script src="/javascripts/app.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
       integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
@@ -131,5 +144,6 @@
       integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
       crossorigin="anonymous"
     ></script>
+    <script src="/javascripts/app.js"></script>
   </body>
 </html>

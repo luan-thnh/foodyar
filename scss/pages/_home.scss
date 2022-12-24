@@ -949,4 +949,130 @@
       z-index: 2;
     }
   }
+
+  &__profile {
+    @include dFlex(center, flex-start, 32rem);
+
+    h1 {
+      margin-bottom: 3.2rem;
+      @include heading1($grayColor);
+    }
+  }
+
+  &__user {
+    text-align: start;
+
+    a {
+      margin-top: 2.4rem;
+    }
+
+    &--btn-logout {
+      @include btnPrimary;
+
+      margin-left: 1.6rem;
+    }
+
+    &--btn-edit {
+      @include btnPrimary($yellowColor, $whiteColor);
+      border-color: $yellowColor;
+    }
+  }
+
+  &__user-avatar {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 1.5rem;
+    box-shadow: 1px 1px 10px rgba($blackColor, 0.2);
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__user-group {
+    @include dFlex($gap: 8rem);
+
+    margin-top: 3.2rem;
+  }
+
+  &__user-label {
+    @include textBody;
+    font-weight: 700;
+  }
+
+  &__user-text {
+  }
+
+  &__user-control {
+    @include textBody;
+  }
+
+  &__history-list {
+    padding: 1.6rem;
+    // height: 100%;
+    // height: 35rem;
+    // overflow-y: auto;
+  }
+
+  &__history-item {
+    @include dFlex($gap: 3.2rem);
+
+    margin-top: 2.4rem;
+
+    &--thumbnail {
+      width: 8rem;
+      height: 5rem;
+      border-radius: 0.8rem;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &--name {
+      @include textBody;
+      font-weight: 600;
+    }
+
+    &--price {
+    }
+  }
+
+  &__form-search {
+    width: 550px;
+    margin: 0 auto;
+    margin-top: 4.8rem;
+    display: flex;
+    gap: 3.2rem;
+  }
+
+  &__search {
+    width: 450px;
+    padding: 1.6rem 3.2rem;
+    border-radius: 1rem;
+    font-size: 1.8rem;
+    // width: 100%;
+    color: $grayColor;
+    box-shadow: 0.3rem 0.3rem rgba($yellowColor, 0.4),
+      0.6rem 0.6rem rgba($yellowColor, 0.2),
+      -0.1rem -0.1rem rgba($yellowColor, 0.4);
+    transition: 0.3s;
+
+    &:focus {
+      color: $yellowColor;
+      box-shadow: -0.3rem -0.3rem rgba($yellowColor, 0.4),
+        -0.6rem -0.6rem rgba($yellowColor, 0.2),
+        0.1rem 0.1rem rgba($yellowColor, 0.4);
+    }
+  }
+
+  &__btn-search {
+    @include btnPrimary;
+  }
 }
