@@ -10,8 +10,6 @@ function index(req, res, next) {
 
     cart.add(product, product.id)
     req.session.cart = cart
-    // console.log(req.session.carts)
-    console.log(req.url)
     res.redirect('/')
   })
 }

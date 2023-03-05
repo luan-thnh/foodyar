@@ -3,11 +3,13 @@ const Product = require('../models/product.js')
 
 function index(req, res, next) {
   if (!req.session.cart)
-    res.render('pages/shop', { title: 'Foodyar || Shopping', products: null })
+    res.render('pages/shop', {
+      title: 'Foodyar || Shopping',
+      products: null,
+    })
 
   var cart = new Cart(req.session.cart)
 
-  console.log(cart.generateArr())
   res.render('pages/shop', {
     title: 'Foodyar || Shopping',
     products: cart.generateArr(),
@@ -34,7 +36,7 @@ async function product(req, res, next) {
   const productId = req.params.id
   const product = await Product.findById(productId)
 
-  console.log(product)
+  // console.log(product)
   res.render('pages/shop/product', {
     title: 'Foodyar || Product',
     product: product,

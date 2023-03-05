@@ -40,6 +40,7 @@ app.use(
     saveUninitialized: false,
     store: MongoStore.create({
       mongoUrl:
+        process.env.MONGODB_URL ||
         'mongodb+srv://foodyar:foodyar@cluster0.to3szhj.mongodb.net/foodyar',
     }),
     cookie: { maxAge: 180 * 60 * 1000 },

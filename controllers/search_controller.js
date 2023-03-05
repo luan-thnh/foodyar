@@ -1,7 +1,7 @@
 const Product = require('../models/product.js')
 
 function index(req, res, next) {
-  console.log(req.user)
+  // console.log(req.user)
   res.render('pages/search', {
     title: 'Foodyar || Search',
     products: [],

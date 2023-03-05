@@ -30,7 +30,7 @@ var loginController = require('../controllers/login_controller')
 var registerController = require('../controllers/register_controller')
 var logoutController = require('../controllers/logout_controller')
 var profileController = require('../controllers/profile_controller')
-var middlewareSession = require('../middlewares/redirectLogin')
+
 
 router.get('/login', loginController.index)
 router.post('/login', loginController.create)
