@@ -7,7 +7,7 @@ var passport = require('passport')
 var bodyParser = require('body-parser')
 var flash = require('connect-flash')
 var MongoStore = require('connect-mongo')
-// var logger = require('morgan')
+require('dotenv').config()
 
 var port = process.env.PORT || 3000
 
